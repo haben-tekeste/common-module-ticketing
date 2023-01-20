@@ -1,3 +1,4 @@
+// errors
 export { BadRequestError } from "./errors/BadRequestError";
 export { DatabaseOperationError } from "./errors/DatabaseOperationError";
 export { NotAuthorizedError } from "./errors/NotAuthorizedError";
