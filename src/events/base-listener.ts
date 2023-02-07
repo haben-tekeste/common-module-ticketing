@@ -24,7 +24,7 @@ export abstract class Listener<T extends Event> {
   abstract filterSubject: string;
   abstract durableName: string;
   abstract streamName: string;
-  abstract deliverSubject: string;
+  abstract deliverSubject: T['subject'];
   private decoder = StringCodec();
   abstract onMessage(data: T["data"], msg: Msg): void;
 
@@ -61,9 +61,10 @@ export abstract class Listener<T extends Event> {
   consumerOptions(): Partial<ConsumerConfig> {
     return {
       durable_name: this.durableName,
+      deliver_subject: this.deliverSubject,
       ack_policy: AckPolicy.Explicit,
       ack_wait: nanos(this.ackWait),
-      // filter_subject: this.filterSubject,
+      filter_subject: this.filterSubject,
       deliver_policy: DeliverPolicy.All,
       replay_policy: ReplayPolicy.Instant,
       deliver_group: this.queueGroupName,
