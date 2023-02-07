@@ -25,11 +25,11 @@ export abstract class Publisher <T extends Event> {
   
       return new Promise((resolve, reject) => {
         try {
-          console.log('publish: ', data);
           
           js.publish(this.subject,this.encoder.encode(JSON.stringify(data)),{
             expect:{streamName}
           })
+          console.log('publish: ', data);
           resolve()
         } catch (error) {
           console.log('publish error: ',data);
