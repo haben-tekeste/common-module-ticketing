@@ -24,7 +24,7 @@ export abstract class Listener<T extends Event> {
   abstract filterSubject: string;
   abstract durableName: string;
   abstract streamName: string;
-  abstract deliverSubject: T['subject'];
+  abstract deliverSubject: string;
   private decoder = StringCodec();
   abstract onMessage(data: T["data"], msg: Msg): void;
 
