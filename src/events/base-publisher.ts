@@ -20,15 +20,13 @@ export abstract class Publisher <T extends Event> {
         await jsm.streams.add({name:streamName, subjects})
     }
   
-    publish(data:T['data'], streamName:string): Promise<void>{
+    publish(data:T['data']): Promise<void>{
       const js = this.client.jetstream();
   
       return new Promise((resolve, reject) => {
         try {
           
-          js.publish(this.subject,this.encoder.encode(JSON.stringify(data)),{
-            expect:{streamName}
-          })
+          js.publish(this.subject,this.encoder.encode(JSON.stringify(data)))
           console.log('publish: ', data);
           resolve()
         } catch (error) {
