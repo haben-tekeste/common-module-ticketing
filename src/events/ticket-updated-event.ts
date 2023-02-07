@@ -1,11 +1,9 @@
 import { Subjects } from "./subjects";
+import { Ticket } from "./ticket-interface";
 
-export interface TicketUpdatedInterface {
-  subject: Subjects.TicketUpdated;
-  data: {
-    id: string;
-    title: string;
-    price: number;
-    userId: string;
-  };
+export interface TicketUpdatedEvent extends Ticket{
+  subject: Subjects.EventTicketUpdated;
+}
+export interface TicketUpdated extends Ticket{
+  subject: Subjects.TicketUpdated
 }
