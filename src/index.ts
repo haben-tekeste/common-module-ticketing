@@ -11,11 +11,12 @@ export { isAuth } from "./middleware/isAuth";
 export { validateRequest } from "./middleware/validate-request";
 export { errorHandler } from "./middleware/error-handler";
 
-
 // events
+export * from "./events/base-listener";
+export * from "./events/base-publisher";
+export * from "./events/subjects";
+export * from "./events/ticket-created-event";
+export * from "./events/ticket-updated-event";
 
-export * from './events/base-listener'
-export * from './events/base-publisher'
-export * from './events/subjects'
-export * from './events/ticket-created-event'
-export * from './events/ticket-updated-event'
+// types
+export * from "./events/types/order-status";
