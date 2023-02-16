@@ -50,8 +50,9 @@ export abstract class Listener<T extends Event> {
     } else {
       try {
         const parsedData = this.decoder.decode(msg.data);
+        console.log('Subject: ', msg.subject);
         console.log(`Received event: ${parsedData}`);
-        this.onMessage(parsedData, msg);
+        this.onMessage(JSON.parse(parsedData), msg);
       } catch (error) {
         console.log("Parser: ", error);
       }
