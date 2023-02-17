@@ -1,4 +1,5 @@
 import { Subjects } from "./subjects";
+
 export interface Ticket {
     subject: Subjects;
     data: {
@@ -6,5 +7,6 @@ export interface Ticket {
       title: string;
       price: number;
       userId: string;
+      version:number;
     };
   }

@@ -1,21 +1,20 @@
 import { Subjects } from "./subjects";
 
-export interface OrderCancelledEvent {
-    subject: Subjects.EventOrderCancelled,
-    data:{
-        id: string,
-        ticket: {
-            id: string
-        }
-    }
+interface Order {
+  subject: Subjects;
+  data: {
+    id: string;
+    version: number;
+    ticket: {
+      id: string;
+    };
+  };
 }
 
-export interface OrderCancelled {
-    subject: Subjects.OrderCancelled,
-    data:{
-        id: string,
-        ticket: {
-            id: string
-        }
-    }
+export interface OrderCancelledEvent extends Order {
+  subject: Subjects.EventOrderCancelled;
+}
+
+export interface OrderCancelled extends Order {
+  subject: Subjects.OrderCancelled;
 }
