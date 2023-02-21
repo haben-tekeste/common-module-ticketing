@@ -7,7 +7,7 @@ interface Event {
 }
 
 export abstract class Publisher <T extends Event> {
-    private client: NatsConnection
+    protected client: NatsConnection
     abstract subject:T['subject']
     private encoder = StringCodec()
   

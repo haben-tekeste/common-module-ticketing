@@ -17,7 +17,7 @@ interface Event {
 }
 
 export abstract class Listener<T extends Event> {
-  private client: NatsConnection;
+  protected client: NatsConnection;
   abstract subject: T["subject"];
   abstract queueGroupName: string;
   protected ackWait = 5 * 1000; //5 seconds
