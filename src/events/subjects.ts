@@ -6,6 +6,7 @@ export enum Subjects {
     OrderCreated = 'order.created',
     OrderCancelled = 'order.cancelled',
     EventOrderCreated = 'events.order.created',
-    EventOrderCancelled = 'events.order.cancelled'
-
+    EventOrderCancelled = 'events.order.cancelled',
+    ExpirationComplete = 'expiration.complete',
+    EventExpirationComplete = 'events.expiration.complete'
 }
