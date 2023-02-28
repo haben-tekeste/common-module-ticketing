@@ -9,10 +9,10 @@ interface Payment {
   };
 }
 
-interface PaymentCreated extends Payment {
+export interface PaymentCreated extends Payment {
   subject: Subjects.PaymentCreated;
 }
 
-interface PaymentCreatedEvent extends Payment {
+export interface PaymentCreatedEvent extends Payment {
   subject: Subjects.EventPaymentCreated;
 }
