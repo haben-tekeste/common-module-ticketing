@@ -8,5 +8,7 @@ export enum Subjects {
     EventOrderCreated = 'events.order.created',
     EventOrderCancelled = 'events.order.cancelled',
     ExpirationComplete = 'expiration.complete',
-    EventExpirationComplete = 'events.expiration.complete'
+    EventExpirationComplete = 'events.expiration.complete',
+    PaymentCreated = 'payment.created',
+    EventPaymentCreated = 'events.payment.created'
 }
